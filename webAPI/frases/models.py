@@ -13,22 +13,9 @@ STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 class Frase(models.Model):
 
-    HORROR = 'horror'
-    COMEDY = 'comedy'
-    ACTION = 'action'
-    DRAMA = 'drama'
 
-    CATEGORIES_CHOICES = (
-        (HORROR, 'Horror'),
-        (COMEDY, 'Comedy'),
-        (ACTION, 'Action'),
-        (DRAMA, 'Drama'),
-    )
+    texto = models.CharField(max_length=500)
 
-    name = models.CharField(max_length=100)
-    release_date = models.DateField()
-    rating = models.IntegerField(default=0)
-    category = models.CharField(max_length=10, choices=CATEGORIES_CHOICES)
     owner = models.ForeignKey('auth.User', related_name='frases', on_delete=models.CASCADE)
     highlighted = models.TextField()
 

@@ -1,0 +1,9 @@
+{% extends 'NLPTools/base.html' %}
+
+{% block content %}
+	{% for post in posts %}
+		<div class="post">
+		<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.text }}</a></h1>
+		</div>
+	{% endfor %}		
+{% endblock %}

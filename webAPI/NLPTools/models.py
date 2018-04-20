@@ -19,11 +19,6 @@ class Post(models.Model):
 
     def __str__(txt):
                 return txt.token
-    
-#    def tokenizer(txt):
-# 	        txt.token = nltk.Text(nltk.word_tokenize(txt.text))
-# 	        return txt.token
 
-#     def tagging(tokenizelist):
-# 	        tag = nltk.pos_tag(tokenizelist)
-# 	        return tag
+
+

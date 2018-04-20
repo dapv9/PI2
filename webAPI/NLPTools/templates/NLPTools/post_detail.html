@@ -3,8 +3,11 @@
 
 {% block content %}
     <div class="post">
-	<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <h1>{{ post.text|linebreaksbr }}</h1>
-        <h1>{{ post.token}}</h1>
-</div>  
+
+            <h1> {{ post.text }}   <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></h1>
+
+        <h3><p> {{ post.token }}</p></h3>
+
+    </div>  
+
 {% endblock %}

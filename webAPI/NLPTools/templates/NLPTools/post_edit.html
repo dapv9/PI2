@@ -1,9 +1,9 @@
     {% extends 'NLPTools/base.html' %}
 
     {% block content %}
-        <h1>New post</h1>
+        <h1>NLP Tools</h1>
         <form method="POST" class="post-form">{% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" d class="save btn btn-default">tokenizer and save</button>
+            <button type="submit" d class="save btn btn-default">Process</button>
         </form>
     {% endblock %}

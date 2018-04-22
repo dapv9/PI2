@@ -5,13 +5,18 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Post
 from .forms import PostForm
-from nltk import word_tokenize, pos_tag, ne_chunk
+import nltk
+from nltk import word_tokenize, ne_chunk
+from nltk.tag import pos_tag, map_tag
 from nltk.tree import Tree
 from nltk.draw.tree import TreeView
 import os
+import json
 
 
 # Create your views here.
+
+
 
 def post_list(request):
 	posts = Post.objects.all().order_by('id')
@@ -31,9 +36,9 @@ def post_new(request):
 			post = form.save(commit=False)
 			post.writter = request.user
 			post.token = ne_chunk(pos_tag(word_tokenize(post.text)))
-			t = Tree.fromstring(str(post.token))
-			TreeView(t)._cframe.print_to_file('NLPTools/images/tree.ps')
-			os.system('convert NLPTools/images/tree.ps NLPTools/images/tree.png')
+			#t = Tree.fromstring(str(post.token))
+			#TreeView(t)._cframe.print_to_file('NLPTools/images/tree.ps')
+			#os.system('convert NLPTools/images/tree.ps NLPTools/images/tree.png')
 			post.save()
 			return redirect('post_detail', pk=post.pk)
 	else:
@@ -49,11 +54,18 @@ def post_edit(request, pk):
 				if form.is_valid():
 					post.writter = request.user
 					post = form.save(commit=False)
-					post.token = ne_chunk(pos_tag(word_tokenize(post.text)))
+					a = pos_tag(word_tokenize(post.text))
+					b = [(word, map_tag('en-ptb','universal',tag))for word,tag in a]
+					grammar1 = "NP: {<DET>?<ADJ>*<NOUN>}"
+					cp1 =  nltk.RegexpParser(grammar1)
+					x = cp1.parse(b)
+					post.token = x
+					#t = Tree.fromstring(str(post.token))
+					print(post.token)
+					#TreeView(t)._cframe.print_to_file('NLPTools/images/tree.ps')
+					#os.system('convert NLPTools/images/tree.ps NLPTools/images/tree.png')
+					#post.token = tree_to_list(t)
 					post.save()
-					t = Tree.fromstring(str(post.token))
-					TreeView(t)._cframe.print_to_file('NLPTools/images/tree.ps')
-					os.system('convert NLPTools/images/tree.ps NLPTools/images/tree.png')
 					return redirect('post_detail', pk=post.pk)
 			else:
 				form = PostForm(instance=post)

@@ -10,7 +10,7 @@ from django.db import models
 
 class Post(models.Model):
     writter = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    text = models.CharField(max_length=300)
+    text = models.TextField(max_length=300)
     token = models.CharField(max_length=500)
 
 
@@ -19,6 +19,3 @@ class Post(models.Model):
 
     def __str__(txt):
                 return txt.token
-
-
-

@@ -2,12 +2,74 @@
 {% extends 'NLPTools/base.html' %}
 
 {% block content %}
+
     <div class="post">
 
             <h1> {{ post.text }}   <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></h1>
-
-        <h3><p> {{ post.token }}</p></h3>
-
-    </div>  
-
+            <h5> {{ post.token }} </h5>
+            <style>
+                    table {
+                        font-family: arial, sans-serif;
+                        border-collapse: collapse;
+                        width: 80%;
+                    }
+                    
+                    td, th {
+                        border: 1px solid #dddddd;
+                        text-align: left;
+                        padding: 8px;
+                    }
+                    
+                    tr:nth-child(even) {
+                        background-color: #dddddd;
+                    }
+            </style>
+            
+            <script type="text/javascript">
+                var mytable = "<table cellpadding='2'><tr>"
+                    mytable += "<td> {{ post.words.splitlines.1.split.0 }} </td> <td> {{ post.words.splitlines.1.split.1 }} </td> <td> {{ post.words.splitlines.1.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.2.split.0 }} </td> <td> {{ post.words.splitlines.2.split.1 }} </td> <td> {{ post.words.splitlines.2.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.3.split.0 }} </td> <td> {{ post.words.splitlines.3.split.1 }} </td> <td> {{ post.words.splitlines.3.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.4.split.0 }} </td> <td> {{ post.words.splitlines.4.split.1 }} </td> <td> {{ post.words.splitlines.4.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.5.split.0 }} </td> <td> {{ post.words.splitlines.5.split.1 }} </td> <td> {{ post.words.splitlines.5.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.6.split.0 }} </td> <td> {{ post.words.splitlines.6.split.1 }} </td> <td> {{ post.words.splitlines.6.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.7.split.0 }} </td> <td> {{ post.words.splitlines.7.split.1 }} </td> <td> {{ post.words.splitlines.7.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.8.split.0 }} </td> <td> {{ post.words.splitlines.8.split.1 }} </td> <td> {{ post.words.splitlines.8.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.9.split.0 }} </td> <td> {{ post.words.splitlines.9.split.1 }} </td> <td> {{ post.words.splitlines.9.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.10.split.0 }} </td> <td> {{ post.words.splitlines.10.split.1 }} </td> <td> {{ post.words.splitlines.10.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.11.split.0 }} </td> <td> {{ post.words.splitlines.11.split.1 }} </td> <td> {{ post.words.splitlines.11.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.12.split.0 }} </td> <td> {{ post.words.splitlines.12.split.1 }} </td> <td> {{ post.words.splitlines.12.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.13.split.0 }} </td> <td> {{ post.words.splitlines.13.split.1 }} </td> <td> {{ post.words.splitlines.13.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.14.split.0 }} </td> <td> {{ post.words.splitlines.14.split.1 }} </td> <td> {{ post.words.splitlines.14.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.15.split.0 }} </td> <td> {{ post.words.splitlines.15.split.1 }} </td> <td> {{ post.words.splitlines.15.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.16.split.0 }} </td> <td> {{ post.words.splitlines.16.split.1 }} </td> <td> {{ post.words.splitlines.16.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.17.split.0 }} </td> <td> {{ post.words.splitlines.17.split.1 }} </td> <td> {{ post.words.splitlines.17.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.18.split.0 }} </td> <td> {{ post.words.splitlines.18.split.1 }} </td> <td> {{ post.words.splitlines.18.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.19.split.0 }} </td> <td> {{ post.words.splitlines.19.split.1 }} </td> <td> {{ post.words.splitlines.19.split.2 }} </td>";
+                    mytable += "</tr><tr>";
+                    mytable += "<td> {{ post.words.splitlines.20.split.0 }} </td> <td> {{ post.words.splitlines.20.split.1 }} </td> <td> {{ post.words.splitlines.20.split.2 }} </td>";
+                    mytable += "</tr>";
+                mytable += "</tr></table> ";
+                document.write(mytable);
+            </script>
+  
+          
 {% endblock %}

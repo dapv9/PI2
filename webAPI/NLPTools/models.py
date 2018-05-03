@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.db import models
+import string
 
 
 
@@ -10,12 +11,13 @@ from django.db import models
 
 class Post(models.Model):
     writter = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    text = models.TextField(max_length=300)
-    token = models.CharField(max_length=500)
-
+    text = models.TextField(max_length=2000)
+    token = models.TextField(max_length=2500)
+    words = models.TextField()
+    
 
     def texto(txt):
-                txt.save()
+            txt.save()
 
     def __str__(txt):
-                return txt.token
+            return txt.text

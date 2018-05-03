@@ -2,8 +2,8 @@
 
     {% block content %}
         <h1>NLP Tools</h1>
-        <form method="POST" class="post-form">{% csrf_token %}
+        <form  METHOD="POST" class="post-form">{% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" d class="save btn btn-default">Process</button>
+            <button type="submit" class="save btn btn-default">Process</button>
         </form>
     {% endblock %}

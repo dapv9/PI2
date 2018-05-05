@@ -6,6 +6,7 @@
 		<div class="post">
 			<h2><a href="{% url 'post_detail' pk=post.pk %}">  {{ post.text }}</a> </h2>
 			<h4>{{ post.token }}</h4>
+			<p>identificador numero: {{ post.pk }}</p>
 		</div>
 	{% endfor %}
 {% endblock %}

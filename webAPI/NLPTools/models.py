@@ -10,9 +10,9 @@ import string
 
 
 class Post(models.Model):
-    writter = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    text = models.TextField(max_length=2000)
-    token = models.TextField(max_length=2500)
+    writter = models.CharField(max_length=15)
+    text = models.TextField()
+    token = models.TextField()
     words = models.TextField()
     
 

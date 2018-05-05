@@ -15,8 +15,13 @@
     margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: 'Lobster', cursive;
+}
+
+h4, h5 {
+    font-family: 'Tahoma';
+    font-size: 10pt;
 }
 
 .save {

@@ -5,75 +5,218 @@
 
     <div class="post">
 
-            <h2> {{ post.text }}  <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></h2>
-            <p> {{ post.token }}  </p>
-            <h4> Texto procesado y guardado correctamente con el identificador: {{ post.pk }} </h4>
-    
-            <style>
-                    table {
-                        font-family: arial, sans-serif;
-                        border-collapse: collapse;
-                        width: 80%;
-                    }
+        <h2> {{ post.text }}  <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></h2>
+        <!--<p> {{ post.token }}  </p>-->
+        <h5> Texto procesado y guardado correctamente con el identificador: {{ post.pk }} </h5>
+        
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 80%;
+            }
                     
-                    td, th {
-                        border: 1px solid #dddddd;
-                        text-align: left;
-                        padding: 8px;
-                    }
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
                     
-                    tr:nth-child(even) {
-                        background-color: #dddddd;
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+            
+        <script >
+            var f0 = "<td> </td>";
+            var f00 = "{{ post.words.splitlines.0 }}";
+            var f1 = "{{ post.words.splitlines.1 }}";
+            var f1_0 = "<td> {{ post.words.splitlines.1.split.0 }} </td>";
+            var f1_1 = "<td> {{ post.words.splitlines.1.split.1 }} </td>";
+            var f1_2 = "<td> {{ post.words.splitlines.1.split.2 }} </td>";
+            var f2 = "{{ post.words.splitlines.2 }}";
+            var f2_0 = "<td> {{ post.words.splitlines.2.split.0 }} </td>";
+            var f2_1 = "<td> {{ post.words.splitlines.2.split.1 }} </td>";
+            var f2_2 = "<td> {{ post.words.splitlines.2.split.2 }} </td>";
+            var f3 = "{{ post.words.splitlines.3 }}";
+            var f3_0 = "<td> {{ post.words.splitlines.3.split.0 }} </td>";
+            var f3_1 = "<td> {{ post.words.splitlines.3.split.1 }} </td>";
+            var f3_2 = "<td> {{ post.words.splitlines.3.split.2 }} </td>";
+            var f4 = "{{ post.words.splitlines.4 }}";
+            var f4_0 = "<td> {{ post.words.splitlines.4.split.0 }} </td>";
+            var f4_1 = "<td> {{ post.words.splitlines.4.split.1 }} </td>";
+            var f4_2 = "<td> {{ post.words.splitlines.4.split.2 }} </td>";
+            var f5 = "{{ post.words.splitlines.5 }}";
+            var f5_0 = "<td> {{ post.words.splitlines.5.split.0 }} </td>";
+            var f5_1 = "<td> {{ post.words.splitlines.5.split.1 }} </td>";
+            var f5_2 = "<td> {{ post.words.splitlines.5.split.2 }} </td>";
+            var f6 = "{{ post.words.splitlines.6 }}";
+            var f6_0 = "<td> {{ post.words.splitlines.6.split.0 }} </td>";
+            var f6_1 = "<td> {{ post.words.splitlines.6.split.1 }} </td>";
+            var f6_2 = "<td> {{ post.words.splitlines.6.split.2 }} </td>";
+            var f7 = "{{ post.words.splitlines.7 }}";
+            var f7_0 = "<td> {{ post.words.splitlines.7.split.0 }} </td>";
+            var f7_1 = "<td> {{ post.words.splitlines.7.split.1 }} </td>";
+            var f7_2 = "<td> {{ post.words.splitlines.7.split.2 }} </td>";
+            var f8 = "{{ post.words.splitlines.8 }}";
+            var f8_0 = "<td> {{ post.words.splitlines.8.split.0 }} </td>";
+            var f8_1 = "<td> {{ post.words.splitlines.8.split.1 }} </td>";
+            var f8_2 = "<td> {{ post.words.splitlines.8.split.2 }} </td>";
+            var f9 = "{{ post.words.splitlines.9 }}";
+            var f9_0 = "<td> {{ post.words.splitlines.9.split.0 }} </td>";
+            var f9_1 = "<td> {{ post.words.splitlines.9.split.1 }} </td>";
+            var f9_2 = "<td> {{ post.words.splitlines.9.split.2 }} </td>";
+            var f10 = "{{ post.words.splitlines.10 }}";
+            var f10_0 = "<td> {{ post.words.splitlines.10.split.0 }} </td>";
+            var f10_1 = "<td> {{ post.words.splitlines.10.split.1 }} </td>";
+            var f10_2 = "<td> {{ post.words.splitlines.10.split.2 }} </td>";
+            var f11 = "{{ post.words.splitlines.11 }}";
+            var f11_0 = "<td> {{ post.words.splitlines.11.split.0 }} </td>";
+            var f11_1 = "<td> {{ post.words.splitlines.11.split.1 }} </td>";
+            var f11_2 = "<td> {{ post.words.splitlines.11.split.2 }} </td>";
+            var f12 = "{{ post.words.splitlines.12 }}";
+            var f12_0 = "<td> {{ post.words.splitlines.12.split.0 }} </td>";
+            var f12_1 = "<td> {{ post.words.splitlines.12.split.1 }} </td>";
+            var f12_2 = "<td> {{ post.words.splitlines.12.split.2 }} </td>";
+            var f13 = "{{ post.words.splitlines.13 }}";
+            var f13_0 = "<td> {{ post.words.splitlines.13.split.0 }} </td>";
+            var f13_1 = "<td> {{ post.words.splitlines.13.split.1 }} </td>";
+            var f13_2 = "<td> {{ post.words.splitlines.13.split.2 }} </td>";
+            var f14 = "{{ post.words.splitlines.14 }}";
+            var f14_0 = "<td> {{ post.words.splitlines.14.split.0 }} </td>";
+            var f14_1 = "<td> {{ post.words.splitlines.14.split.1 }} </td>";
+            var f14_2 = "<td> {{ post.words.splitlines.14.split.2 }} </td>";
+            var f15 = "{{ post.words.splitlines.15 }}";
+            var f15_0 = "<td> {{ post.words.splitlines.15.split.0 }} </td>";
+            var f15_1 = "<td> {{ post.words.splitlines.15.split.1 }} </td>";
+            var f15_2 = "<td> {{ post.words.splitlines.15.split.2 }} </td>";
+            var f16 = "{{ post.words.splitlines.16 }}";
+            var f16_0 = "<td> {{ post.words.splitlines.16.split.0 }} </td>";
+            var f16_1 = "<td> {{ post.words.splitlines.16.split.1 }} </td>";
+            var f16_2 = "<td> {{ post.words.splitlines.16.split.2 }} </td>";
+            var f17 = "{{ post.words.splitlines.17 }}";
+            var f17_0 = "<td> {{ post.words.splitlines.17.split.0 }} </td>";
+            var f17_1 = "<td> {{ post.words.splitlines.17.split.1 }} </td>";
+            var f17_2 = "<td> {{ post.words.splitlines.17.split.2 }} </td>";
+            var f18 = "{{ post.words.splitlines.18 }}";
+            var f18_0 = "<td> {{ post.words.splitlines.18.split.0 }} </td>";
+            var f18_1 = "<td> {{ post.words.splitlines.18.split.1 }} </td>";
+            var f18_2 = "<td> {{ post.words.splitlines.18.split.2 }} </td>";
+            var f19 = "{{ post.words.splitlines.19 }}";
+            var f19_0 = "<td> {{ post.words.splitlines.19.split.0 }} </td>";
+            var f19_1 = "<td> {{ post.words.splitlines.19.split.1 }} </td>";
+            var f19_2 = "<td> {{ post.words.splitlines.19.split.2 }} </td>";
+            var f20 = "{{ post.words.splitlines.20 }}";
+            var f20_0 = "<td> {{ post.words.splitlines.20.split.0 }} </td>";
+            var f20_1 = "<td> {{ post.words.splitlines.20.split.1 }} </td>";
+            var f20_2 = "<td> {{ post.words.splitlines.20.split.2 }} </td>";
+            var f21 = "{{ post.words.splitlines.21 }}";
+            var f21_0 = "<td> {{ post.words.splitlines.21.split.0 }} </td>";
+            var f21_1 = "<td> {{ post.words.splitlines.21.split.1 }} </td>";
+            var f21_2 = "<td> {{ post.words.splitlines.21.split.2 }} </td>";
+            var f22 = "{{ post.words.splitlines.22 }}";
+            var f22_0 = "<td> {{ post.words.splitlines.22.split.0 }} </td>";
+            var f22_1 = "<td> {{ post.words.splitlines.22.split.1 }} </td>";
+            var f22_2 = "<td> {{ post.words.splitlines.22.split.2 }} </td>";
+            var f23 = "{{ post.words.splitlines.23 }}";
+            var f23_0 = "<td> {{ post.words.splitlines.23.split.0 }} </td>";
+            var f23_1 = "<td> {{ post.words.splitlines.23.split.1 }} </td>";
+            var f23_2 = "<td> {{ post.words.splitlines.23.split.2 }} </td>";
+            var f24 = "{{ post.words.splitlines.24 }}";
+            var f24_0 = "<td> {{ post.words.splitlines.24.split.0 }} </td>";
+            var f24_1 = "<td> {{ post.words.splitlines.24.split.1 }} </td>";
+            var f24_2 = "<td> {{ post.words.splitlines.24.split.2 }} </td>";
+            var f25 = "{{ post.words.splitlines.25 }}";
+            var f25_0 = "<td> {{ post.words.splitlines.25.split.0 }} </td>";
+            var f25_1 = "<td> {{ post.words.splitlines.25.split.1 }} </td>";
+            var f25_2 = "<td> {{ post.words.splitlines.25.split.2 }} </td>";
+            var f26 = "{{ post.words.splitlines.26 }}";
+            var f26_0 = "<td> {{ post.words.splitlines.26.split.0 }} </td>";
+            var f26_1 = "<td> {{ post.words.splitlines.26.split.1 }} </td>";
+            var f26_2 = "<td> {{ post.words.splitlines.26.split.2 }} </td>";
+            var f27 = "{{ post.words.splitlines.27 }}";
+            var f27_0 = "<td> {{ post.words.splitlines.27.split.0 }} </td>";
+            var f27_1 = "<td> {{ post.words.splitlines.27.split.1 }} </td>";
+            var f27_2 = "<td> {{ post.words.splitlines.27.split.2 }} </td>";
+            var f28 = "{{ post.words.splitlines.28 }}";
+            var f28_0 = "<td> {{ post.words.splitlines.28.split.0 }} </td>";
+            var f28_1 = "<td> {{ post.words.splitlines.28.split.1 }} </td>";
+            var f28_2 = "<td> {{ post.words.splitlines.28.split.2 }} </td>";
+            var f29 = "{{ post.words.splitlines.29 }}";
+            var f29_0 = "<td> {{ post.words.splitlines.29.split.0 }} </td>";
+            var f29_1 = "<td> {{ post.words.splitlines.29.split.1 }} </td>";
+            var f29_2 = "<td> {{ post.words.splitlines.29.split.2 }} </td>";
+            var f30 = "{{ post.words.splitlines.30 }}";
+            var f30_0 = "<td> {{ post.words.splitlines.30.split.0 }} </td>";
+            var f30_1 = "<td> {{ post.words.splitlines.30.split.1 }} </td>";
+            var f30_2 = "<td> {{ post.words.splitlines.30.split.2 }} </td>";
+                
+            var z  = "{{ post.words.splitlines }}".split(', ').length; //cantidad de palabras del texto
+            var mytable = "<table cellpadding='2'><tr>";
+            mytable += "<th> Entity </th><th> Word </th><th> Tag </th>";
+            mytable += "</tr><tr>";
+            if (z!=1){
+                for ( i = 1;i <z;i++){
+                    f = 'f' + i;
+                    tam = eval(f).trim().replace('  ',' ').split(' ');
+                    if (tam.length>=3){
+                        for ( y = 0;y <tam.length;y++){
+                            g = 'f' + i + '_' + y;
+                            mytable += eval(g);
+                        }
                     }
-            </style>
-
-
-            <script >
-                
-                var f1 = "<td> {{ post.words.splitlines.1.split.0 }} </td> <td> {{ post.words.splitlines.1.split.1 }} </td> <td> {{ post.words.splitlines.1.split.2 }} </td>";
-                var f2 = "<td> {{ post.words.splitlines.2.split.0 }} </td> <td> {{ post.words.splitlines.2.split.1 }} </td> <td> {{ post.words.splitlines.2.split.2 }} </td>";
-                var f3 = "<td> {{ post.words.splitlines.3.split.0 }} </td> <td> {{ post.words.splitlines.3.split.1 }} </td> <td> {{ post.words.splitlines.3.split.2 }} </td>";
-                var f4 = "<td> {{ post.words.splitlines.4.split.0 }} </td> <td> {{ post.words.splitlines.4.split.1 }} </td> <td> {{ post.words.splitlines.4.split.2 }} </td>";
-                var f5 = "<td> {{ post.words.splitlines.5.split.0 }} </td> <td> {{ post.words.splitlines.5.split.1 }} </td> <td> {{ post.words.splitlines.5.split.2 }} </td>";
-                var f6 = "<td> {{ post.words.splitlines.6.split.0 }} </td> <td> {{ post.words.splitlines.6.split.1 }} </td> <td> {{ post.words.splitlines.6.split.2 }} </td>";
-                var f7 = "<td> {{ post.words.splitlines.7.split.0 }} </td> <td> {{ post.words.splitlines.7.split.1 }} </td> <td> {{ post.words.splitlines.7.split.2 }} </td>";
-                var f8 = "<td> {{ post.words.splitlines.8.split.0 }} </td> <td> {{ post.words.splitlines.8.split.1 }} </td> <td> {{ post.words.splitlines.8.split.2 }} </td>";
-                var f9 = "<td> {{ post.words.splitlines.9.split.0 }} </td> <td> {{ post.words.splitlines.9.split.1 }} </td> <td> {{ post.words.splitlines.9.split.2 }} </td>";
-                var f10 = "<td> {{ post.words.splitlines.10.split.0 }} </td> <td> {{ post.words.splitlines.10.split.1 }} </td> <td> {{ post.words.splitlines.10.split.2 }} </td>";
-                var f11 = "<td> {{ post.words.splitlines.11.split.0 }} </td> <td> {{ post.words.splitlines.11.split.1 }} </td> <td> {{ post.words.splitlines.11.split.2 }} </td>";
-                var f12 = "<td> {{ post.words.splitlines.12.split.0 }} </td> <td> {{ post.words.splitlines.12.split.1 }} </td> <td> {{ post.words.splitlines.12.split.2 }} </td>";
-                var f13 = "<td> {{ post.words.splitlines.13.split.0 }} </td> <td> {{ post.words.splitlines.13.split.1 }} </td> <td> {{ post.words.splitlines.13.split.2 }} </td>";
-                var f14 = "<td> {{ post.words.splitlines.14.split.0 }} </td> <td> {{ post.words.splitlines.14.split.1 }} </td> <td> {{ post.words.splitlines.14.split.2 }} </td>";
-                var f15 = "<td> {{ post.words.splitlines.15.split.0 }} </td> <td> {{ post.words.splitlines.15.split.1 }} </td> <td> {{ post.words.splitlines.15.split.2 }} </td>";
-                var f16 = "<td> {{ post.words.splitlines.16.split.0 }} </td> <td> {{ post.words.splitlines.16.split.1 }} </td> <td> {{ post.words.splitlines.16.split.2 }} </td>";
-                var f17 = "<td> {{ post.words.splitlines.17.split.0 }} </td> <td> {{ post.words.splitlines.17.split.1 }} </td> <td> {{ post.words.splitlines.17.split.2 }} </td>";
-                var f18 = "<td> {{ post.words.splitlines.18.split.0 }} </td> <td> {{ post.words.splitlines.18.split.1 }} </td> <td> {{ post.words.splitlines.18.split.2 }} </td>";
-                var f19 = "<td> {{ post.words.splitlines.19.split.0 }} </td> <td> {{ post.words.splitlines.19.split.1 }} </td> <td> {{ post.words.splitlines.19.split.2 }} </td>";
-                var f20 = "<td> {{ post.words.splitlines.20.split.0 }} </td> <td> {{ post.words.splitlines.20.split.1 }} </td> <td> {{ post.words.splitlines.20.split.2 }} </td>";
-                var f21 = "<td> {{ post.words.splitlines.21.split.0 }} </td> <td> {{ post.words.splitlines.21.split.1 }} </td> <td> {{ post.words.splitlines.21.split.2 }} </td>";
-                var f22 = "<td> {{ post.words.splitlines.22.split.0 }} </td> <td> {{ post.words.splitlines.22.split.1 }} </td> <td> {{ post.words.splitlines.22.split.2 }} </td>";
-                var f23 = "<td> {{ post.words.splitlines.23.split.0 }} </td> <td> {{ post.words.splitlines.23.split.1 }} </td> <td> {{ post.words.splitlines.23.split.2 }} </td>";
-                var f24 = "<td> {{ post.words.splitlines.24.split.0 }} </td> <td> {{ post.words.splitlines.24.split.1 }} </td> <td> {{ post.words.splitlines.24.split.2 }} </td>";
-                var f25 = "<td> {{ post.words.splitlines.25.split.0 }} </td> <td> {{ post.words.splitlines.25.split.1 }} </td> <td> {{ post.words.splitlines.25.split.2 }} </td>";
-                var f26 = "<td> {{ post.words.splitlines.26.split.0 }} </td> <td> {{ post.words.splitlines.26.split.1 }} </td> <td> {{ post.words.splitlines.26.split.2 }} </td>";
-                var f27 = "<td> {{ post.words.splitlines.27.split.0 }} </td> <td> {{ post.words.splitlines.27.split.1 }} </td> <td> {{ post.words.splitlines.27.split.2 }} </td>";
-                var f28 = "<td> {{ post.words.splitlines.28.split.0 }} </td> <td> {{ post.words.splitlines.28.split.1 }} </td> <td> {{ post.words.splitlines.28.split.2 }} </td>";
-                var f29 = "<td> {{ post.words.splitlines.29.split.0 }} </td> <td> {{ post.words.splitlines.29.split.1 }} </td> <td> {{ post.words.splitlines.29.split.2 }} </td>";
-                var f30 = "<td> {{ post.words.splitlines.30.split.0 }} </td> <td> {{ post.words.splitlines.30.split.1 }} </td> <td> {{ post.words.splitlines.30.split.2 }} </td>";
-                
-                var z  = "{{ post.words.splitlines }}".split(', ').length; //cantidad de palabras del texto
-                var mytable = "<table cellpadding='2'><tr>" //inicio la tabla
-                
-                for ( i = 1;i <z;i++){ 
-                    b = Number('"' + '{{ ' + 'post.words.splitlines.' + i + ' }' + '}'+'"'.replace(',',', ').trim().split(' ').length);
-                    g = 'f' + i;
-                    mytable += eval(g);
+                    else {
+                        mytable += f0;
+                        for ( u = 0;u <tam.length;u++){
+                            g = 'f'+i+'_'+u;
+                            mytable += eval(g);
+                        }
+                    }
                     mytable += "</tr><tr>";
-                        
                 }
-                mytable += "</tr></table> "; // cierro la tabla
-                document.write(mytable); //imprimo latabla en pantalla
                 
-            </script>       
-        </div>
+            }
+            else{
+                words  = "{{ post.token.splitlines.0 }}";
+                b = words.trim().split(' ').length; //cantidad de palabras del texto
+                for ( w = 1;w <b;w++){
+                    a = words.trim().split(' ');
+                    be = a[w].split(' ');
+                    ce = be[0].replace('/',' ');
+                    de = ce.split(' ').length;
+                    fe= '';
+                    if (de==1){
+                        fe = ce +'/'+ a[w+1].split(' ');
+                        fe = fe.trim().replace('(','').replace(')','').replace('/',' ').replace('/',' ').split(' ');
+                        w++;
+                    }
+                    else{
+                        fe = ce.trim().replace(')','').split(' ');
+                    }
+                    
+                    if (de<2){
+                        for ( kk = 0;kk <3;kk++){
+                            mytable += "<td> ";
+                            mytable += fe[kk];
+                            mytable += "</td>";
+                        }
+                    mytable += "</tr> <tr>";
+                    }
+                    else {
+                        mytable += "<td> </td>";
+                        for ( uu = 0;uu <2;uu++){
+                            mytable += "<td>";
+                            mytable += fe[uu];
+                            mytable += "</td>";
+                        }
+                        mytable += "</tr><tr>";
+                    }
+                }
+            }
+            mytable += "</tr></table> "; // cierro la tabla
+            document.write(mytable); //imprimo latabla en pantalla
+            
+            
+        </script>       
+    </div>
 {% endblock %}

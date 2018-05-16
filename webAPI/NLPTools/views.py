@@ -30,8 +30,10 @@ def post_new(request):
 		form=PostForm(request.POST)
 		if form.is_valid():
 			post = form.save(commit=False)
-			post.token = ne_chunk(pos_tag(word_tokenize(post.text)))
-			post.words = str(post.token).replace('(S ','').replace('(','').replace(')','').replace('/',' ')
+			a = word_tokenize(post.text)
+			post.token = ne_chunk(pos_tag(a))
+			s=str(post.token).replace('(S ','').replace('(','').replace(')','')
+			post.words=s.replace('/',' ')
 			post.save()
 			return redirect('post_detail', pk=post.pk)
 	else:
@@ -39,20 +41,21 @@ def post_new(request):
 		return render(request,'NLPTools/post_edit.html',{'form':form})
 
 def post_edit(request, pk):
-   			post = get_object_or_404(Post, pk=pk)
-			if request.method == "POST":
-				form = PostForm(request.POST, instance=post)
-				if form.is_valid():
-						post = form.save(commit=False)
-						a = word_tokenize(post.text)
-						post.token = ne_chunk(pos_tag(a))
-						s=str(post.token).replace('(S ','').replace('(','').replace(')','')
-						post.words=s.replace('/',' ')
-						post.save()
-						return redirect('post_detail', pk=post.pk)
-			else:
-						form = PostForm(instance=post)
-						return render(request, 'NLPTools/post_edit.html', {'form': form})
+   	post = get_object_or_404(Post, pk=pk)
+	if request.method == "POST":
+		form = PostForm(request.POST, instance=post)
+		if form.is_valid():
+			post = form.save(commit=False)
+			a = word_tokenize(post.text)
+			post.token = ne_chunk(pos_tag(a))
+			s=str(post.token).replace('(S ','').replace('(','').replace(')','')
+			post.words=s.replace('/',' ')
+			
+			post.save()
+		return redirect('post_detail', pk=post.pk)
+	else:
+		form = PostForm(instance=post)
+		return render(request, 'NLPTools/post_edit.html', {'form': form})
 
 def post_json(request, pk):
 	try:
